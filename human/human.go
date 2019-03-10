@@ -32,5 +32,9 @@ func (p *Person) GuessAge(age int) error {
 		return errors.New(TOOHIGHERROR)
 	}
 
+	if age < p.hiddenAge {
+		return errors.New(TOOLOWERROR)
+	}
+
 	return nil
 }
