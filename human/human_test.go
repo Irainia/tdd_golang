@@ -33,3 +33,13 @@ func TestGuessAgeTooLow(t *testing.T) {
 		t.Errorf("expected: %s - actual: %s", expeced, actual.Error())
 	}
 }
+
+func TestGuessAgeCorrect(t *testing.T) {
+	person := NewPerson()
+	actual := person.GuessAge(person.hiddenAge)
+
+	if actual != nil {
+		t.Errorf("expected: nil - actual: %s", actual.Error())
+		return
+	}
+}
